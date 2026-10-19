@@ -43,3 +43,19 @@ export function extractQuantity(quantityString, unitName) {
   return null;
 }
 
+export function extractAllQuantities(quantityString) {
+  if (typeof quantityString !== 'string' || quantityString.trim().length === 0) {
+    return {};
+  }
+  const result = {};
+  const regex = /(?:^|[\s(])([+-]?\d+(?:\.\d+)?)\s+([A-Z][A-Z0-9_/\-]*)(?=\s|,|;|\)|$)/g;
+  let match;
+  while ((match = regex.exec(quantityString)) !== null) {
+    const val = Number(match[1]);
+    const unit = match[2];
+    if (!Number.isNaN(val) && !(unit in result)) {
+      result[unit] = val;
+    }
+  }
+  return result;
+}
