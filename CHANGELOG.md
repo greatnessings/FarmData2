@@ -234,3 +234,12 @@
 ### Features
 
 * **fd2:** Add the FD2 Modules and supporting code/structures ([#2](https://github.com/FarmData2/FarmData2/issues/2)) ([51fac33](https://github.com/FarmData2/FarmData2/commit/51fac338c09fb9ecaec0614c6c60bb643b27a974))
+
+## [Unreleased] - 2026-10-24
+- Published verification notes and release changelog for `FarmData2`.
+
+## [0.2.0] - 2026-10-21
+- Added automated regression and edge-case tests verifying `extractAllQuantities`.
+
+## [0.1.1] - 2026-10-18
+- Implemented `extractAllQuantities` with deterministic input validation.
