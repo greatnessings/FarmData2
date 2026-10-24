@@ -61,6 +61,17 @@ describe('Test the extractQuantity function', () => {
     expect(farmosUtil.extractQuantity(null, 'TRAYS')).to.be.null;
     expect(farmosUtil.extractQuantity('5 TRAYS (Count)', '')).to.be.null;
   });
+  it('Test extractAllQuantities multi-unit parsing and empty inputs', () => {
+    expect(
+      farmosUtil.extractAllQuantities(
+        '2 TRAYS (Count), 102.5 FEET (Length/depth); 72 CELLS/TRAY'
+      )
+    ).to.deep.equal({
+      TRAYS: 2,
+      FEET: 102.5,
+      'CELLS/TRAY': 72,
+    });
+    expect(farmosUtil.extractAllQuantities('')).to.deep.equal({});
+    expect(farmosUtil.extractAllQuantities(null)).to.deep.equal({});
+  });
 });
-
-

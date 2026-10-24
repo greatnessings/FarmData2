@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { extractQuantity, extractAllQuantities } from './farmosUtil.extractQuantity.js';
+import { extractQuantity, extractAllQuantities } from '../library/farmosUtil/farmosUtil.extractQuantity.js';
 
 test('extractQuantity and extractAllQuantities parse multi-unit farmOS strings', () => {
   const raw = '2 TRAYS (Count), 102.5 FEET (Length/depth); 72 CELLS/TRAY';
